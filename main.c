@@ -1,11 +1,13 @@
 #include "inventario.h"
 
+
 int main() {
   int opc;
   int n = 1;
   int numeroProducto;
 
   do {
+    error:
     printf("\n\t::::::MENU::::::\n");
     printf("\n1. Crear y agregar un producto");
     printf("\n2. Agregar más productos");
@@ -47,6 +49,10 @@ int main() {
       break;
     }
   } while (opc != 5);
-
+  if (opc != 1 && opc != 2 && opc != 3 && opc != 4 && opc != 5 ){
+    printf("opcion no valida");
+    goto error;
+  }
+  
   return 0;
 }
