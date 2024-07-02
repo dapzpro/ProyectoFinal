@@ -63,11 +63,15 @@ int agregar(int n) {
     fprintf(fp, "\t\t\t%d\t\t\t%d\t\t\t%d\n\n", producto.ingreso,
             producto.salida,
             producto.stock = producto.ingreso - producto.salida);
-
+  error:
     printf("Desea ingresar otro producto? (Si = 1/ No = 0): ");
     scanf("%d", &opc);
     n++;
   } while (opc == 1);
+  if (opc != 0 && opc != 1) {
+    printf("error!! Opcion no valida");
+    goto error;
+  }
 
   fclose(fp);
   return n;
